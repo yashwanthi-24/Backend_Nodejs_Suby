@@ -11,7 +11,7 @@ const path = require('path')
  //what are ever importing the express will assign to app
  const app = express()
 
- const PORT = 4000;
+ const PORT = process.env.PORT || 4000;
  //to access .env file
  dotEnv.config();
 
@@ -32,6 +32,6 @@ app.use('/uploads',express.static('uploads'));
  });
 
  //routing the path in browser
- app.use('/home',(req,res)=>{
+ app.use('/',(req,res)=>{
     res.send("welcome to suby")
  })
