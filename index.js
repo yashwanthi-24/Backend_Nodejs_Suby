@@ -7,10 +7,11 @@
  const bodyParser = require('body-parser')
  const firmRoutes = require('./routes/firmRoutes')
  const  productRoutes = require('./routes/productRoutes')
+ const cors = require('cors')
 const path = require('path')
  //what are ever importing the express will assign to app
  const app = express()
-
+app.use(cors())
  const PORT = process.env.PORT || 4000;
  //to access .env file
  dotEnv.config();
